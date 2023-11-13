@@ -4,9 +4,11 @@
          "FROM node:latest",
          "RUN mkdir -p /usr/src/app",
          "WORKDIR /usr/src/app",
-         "COPY ./ /usr/src/app",
+         "COPY package*.json ./",
          "RUN npm install",
+         "RUN npm install esm",
+         "COPY . .",
          "EXPOSE 1234",
-         "CMD [\"node\", \"bin/server\", \"--port\", \"1234\"]"
+         "CMD [\"node\", \"-r\", \"esm\", \"bin/server\", \"--port\", \"1234\"]"
   ]
 }
