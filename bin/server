@@ -8,6 +8,8 @@ import Debug from 'debug';
 
 import CreateServer from '../server';
 
+const debug = Debug('localtunnel');
+
 const argv = optimist
     .usage('Usage: $0 --port [num]')
     .options('secure', {
@@ -63,4 +65,3 @@ process.on('unhandledRejection', (reason, promise) => {
 });
 
 // vim: ft=javascript
-
