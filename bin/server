@@ -1,12 +1,12 @@
-require('localenv');
-const optimist = require('optimist');
+#!/usr/bin/env node -r esm
 
-const log = require('book');
-const Debug = require('debug');
+import 'localenv';
+import optimist from 'optimist';
 
-const CreateServer = require('../server');
+import log from 'book';
+import Debug from 'debug';
 
-const debug = Debug('localtunnel');
+import CreateServer from '../server';
 
 const argv = optimist
     .usage('Usage: $0 --port [num]')
